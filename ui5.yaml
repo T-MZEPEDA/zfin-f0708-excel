@@ -1,0 +1,47 @@
+specVersion: "2.6"
+metadata:
+  name: customer.zfin.f0708.excel
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: http://sgmcidv40101.sgm0303.aws.local:44301
+            client: "500"
+            destination: DV4
+          - path: /resources/sap/fin/central/lib
+            destination: DV4
+            url: http://sgmcidv40101.sgm0303.aws.local:44301
+            client: "500"
+            pathPrefix: /sap/bc/ui5_ui5/sap/fin_lib
+          - path: /resources/sap/se/mi/plm/lib/attachmentservice
+            destination: DV4
+            url: http://sgmcidv40101.sgm0303.aws.local:44301
+            client: "500"
+            pathPrefix: /sap/bc/ui5_ui5/sap/plm_ath_cres1
+          - path: /resources/sap/s4h/cfnd/featuretoggle
+            destination: DV4
+            url: http://sgmcidv40101.sgm0303.aws.local:44301
+            client: "500"
+            pathPrefix: /sap/bc/ui5_ui5/sap/featuretoggles1
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+          version: "1.136.0"
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: customer.zfin.f0708.excel
+        ui5Theme: sap_fiori_3        

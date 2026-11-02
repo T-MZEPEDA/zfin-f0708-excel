@@ -1,0 +1,53 @@
+{
+    "_version": "1.1.0",
+    "sap.app": {
+        "_version": "1.1.0",
+        "id": "customer.zfin.f0708.excel",
+        "type": "application",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{APPNAME_TITLE}}",
+        "sourceTemplate": {
+            "id": "generator-extensibilty-sub",
+            "version": "1.0.0"
+        }
+    },
+    "sap.ui": {
+        "_version": "1.1.0",
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://Fiori5/F0708",
+            "favIcon": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": false
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.1.0",
+        "dependencies": {
+            "minUI5Version": "1.136.1"
+        },
+        "extends": {
+            "component": "fin.gl.finstatement.display",
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "fin.gl.finstatement.display.view.S1": {
+                        "controllerName": "customer.zfin.f0708.excel.ext.controller.S1Custom"
+                    }
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": false
+        }
+    }
+}

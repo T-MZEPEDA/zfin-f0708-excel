@@ -1,0 +1,35 @@
+{
+  "type": "abaprep",
+  "BSPName": "FIN_FINSTATEMNT",
+  "component": "FIN_FINSTATEMNT%2fComponent.js",
+  "manifest": "FIN_FINSTATEMNT%2fmanifest.json",
+  "versionJsonPath": "FIN_FINSTATEMNT%2fversion.json",
+  "configuration": "FIN_FINSTATEMNT%2fConfiguration.js",
+  "controllers": {
+    "Main": "FIN_FINSTATEMNT%2fMain.controller.js",
+    "S1": "FIN_FINSTATEMNT%2fview%2fS1.controller.js"
+  },
+  "views": {
+    "Main": "FIN_FINSTATEMNT%2fMain.view.xml",
+    "S1": "FIN_FINSTATEMNT%2fview%2fS1.view.xml"
+  },
+  "fragments": {
+    "NavigationPopover": "FIN_FINSTATEMNT%2fview%2fNavigationPopover.fragment.xml",
+    "PDFOptions": "FIN_FINSTATEMNT%2fview%2fPDFOptions.fragment.xml",
+    "ShareSheet": "FIN_FINSTATEMNT%2fview%2fShareSheet.fragment.xml"
+  },
+  "system": {
+    "name": "DV4",
+    "proxyUrlPrefix": "/destinations/DV4",
+    "path": "/sap/bc/adt",
+    "url": "/destinations/DV4/sap/bc/adt",
+    "wattUsage": "odata_abap,dev_abap",
+    "entryPath": "/sap/bc/adt",
+    "additionalData": []
+  },
+  "minUI5Version": "1.136.1",
+  "namespace": "fin.gl.finstatement.display",
+  "parentResourceRootUrl": "/destinations/DV4/sap/bc/ui5_ui5/sap/FIN_FINSTATEMNT",
+  "resourceBundle": "i18n/i18n.properties",
+  "shouldLinkComponentToManifest": true
+}
